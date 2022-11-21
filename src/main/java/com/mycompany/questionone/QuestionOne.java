@@ -20,6 +20,7 @@ public class QuestionOne {
         int input;
         
         System.out.println("Enter (1) to launch menu or any other key to exit");
+        //converting string to a number
         input =Integer.parseInt( myObj.nextLine());
         
         
@@ -42,6 +43,7 @@ public class QuestionOne {
                            (4) delete a product
                            (5) print report
                            (6) Exit Application""");
+        
         Scanner innerObj = new Scanner(System.in);
         var input2 = Integer.parseInt(innerObj.nextLine());
         
@@ -65,6 +67,8 @@ public class QuestionOne {
       
        String productCode;
        String productName;
+       int productCategory;
+       int warrantyPeriod;
        //scanner obj
       Scanner myScanner = new Scanner(System.in);
      
@@ -74,12 +78,51 @@ public class QuestionOne {
       productCode = myScanner.nextLine();
       productInfo.add(productCode);
       
-      System.out.print("Enter Product Name");
+      System.out.println("Enter Product Name");
       productName = myScanner.nextLine();
       productInfo.add(productName);
       
-      System.out.println(productInfo);
-      
+     System.out.println("""
+                        Select Product Category
+                        (1) Desktop Computer
+                        (2) Laptop
+                        (3) Tablet
+                        (4) Printer
+                        (5) Gaming Console""");
+     
+     productCategory = Integer.parseInt(myScanner.nextLine());
+     
+        switch(productCategory) {
+            case 1:
+                productInfo.add("Desktop Computer");
+                break;
+            case 2:
+                productInfo.add("Laptop");
+                break;
+            case 3:
+                productInfo.add("Tablet");
+                break;
+            case 4:
+                productInfo.add("Printer");
+                break;
+            case 5:
+                productInfo.add("Gaming Console");
+                break;
+            default:
+                break;
+        }
+  
+       System.out.println("Enter (1) for 6 month warranty or press any other key for 2 year warant  ");
+       warrantyPeriod = Integer.parseInt(  myScanner.nextLine());
+       
+       if(warrantyPeriod == 1){
+           
+           productInfo.add("6 month");
+       }
+       else{
+           productInfo.add("2 year");
+       }
+       System.out.println(productInfo.get(3));
     }
 
     private static void searchProduct() {
