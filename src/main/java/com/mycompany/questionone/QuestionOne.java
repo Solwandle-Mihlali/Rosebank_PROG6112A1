@@ -12,8 +12,10 @@ import java.util.ArrayList;
 
 public class QuestionOne {
     
+    public static ArrayList<String> productInfo = new ArrayList<String>();
     public static void main(String[] args) {
         
+       
         System.out.println("BRIGHT FUTURES TECHNOLOGIES APPLICATION " + "\n"+
                 "****************************************");
         Scanner myObj = new Scanner(System.in);
@@ -21,14 +23,9 @@ public class QuestionOne {
         
         System.out.println("Enter (1) to launch menu or any other key to exit");
         //converting string to a number
-        input =Integer.parseInt( myObj.nextLine());
-        
-        
+        input =Integer.parseInt( myObj.nextLine());      
         if(input == 1){
-            
             promptMethod();
-            
-            
         }
         
     }
@@ -60,7 +57,8 @@ public class QuestionOne {
     }
 
     private static void captureProduct() {
-      ArrayList<String> productInfo = new ArrayList<String>();
+        //creating arraylist for storage of info
+    
       
       
       //declaring variables 
@@ -69,6 +67,9 @@ public class QuestionOne {
        String productName;
        int productCategory;
        int warrantyPeriod;
+       int productPrice;
+       int stockLevel;
+       String supplier;
        //scanner obj
       Scanner myScanner = new Scanner(System.in);
      
@@ -122,7 +123,32 @@ public class QuestionOne {
        else{
            productInfo.add("2 year");
        }
-       System.out.println(productInfo.get(3));
+       
+       System.out.println("Enter Product Price");
+       productPrice = myScanner.nextInt();
+       productInfo.add( Integer.toString(productPrice)); //convert to string ass array list stores strings veryy important
+       
+       
+       System.out.println("enter stock evel");
+       stockLevel = myScanner.nextInt();
+       productInfo.add(Integer.toString(stockLevel));
+       
+       System.out.println("Enter Supplier");
+       supplier = myScanner.nextLine();
+       productInfo.add(supplier);
+       
+       System.out.println("Product details have been saved successfully!!");
+       
+       System.out.println(productInfo);
+       
+       System.out.println("Enter (1) to launch menu or any other key to exit");
+       int input3 = myScanner.nextInt();
+       
+       if(input3 ==1){
+           
+           promptMethod();
+       }
+       
     }
 
     private static void searchProduct() {
