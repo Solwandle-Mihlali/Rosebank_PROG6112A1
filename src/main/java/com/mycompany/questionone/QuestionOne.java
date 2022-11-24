@@ -8,7 +8,7 @@
 package com.mycompany.questionone;
 
 import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.*;
 
 public class QuestionOne {
     
@@ -153,18 +153,36 @@ public class QuestionOne {
 
     private static void searchProduct() {
         
-    }
+        Scanner search = new Scanner(System.in);
+        System.out.println("Enter Product Code" + "\n");
+        String searchCode = search.nextLine();
+        
+        if(productInfo.contains(searchCode)){
+            
+            System.out.print("""
+                             ********************************
+                             PRODUCT SEARCH RESULTS
+                             *********************************
+                             Product Code""" );
+            
+        }
+        else{
+            System.out.println("product does not exist");
+        }
+    };
 
     private static void updateProduct() {
        
-    }
+    };
 
     private static void deleteProduct() {
         
-    }
+    };
 
     private static void printReport() {
       
-    }
+    };
+
+ 
     
 }
